@@ -1,0 +1,12 @@
+.profile__info {
+  min-width: 280px;
+  margin: 0 auto 36px;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__info {
+    min-width: 428px;
+    margin: 0;
+  }
+}
