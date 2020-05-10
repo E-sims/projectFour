@@ -1,2 +1,28 @@
+@import url(./__logo/header__logo.css);
+
 .header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 28px 8.43% 32px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  max-width: 100%;
+  margin: 0 auto 38px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    max-width: 720px;
+    padding: 35px 0 32px;
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    max-width: 882px;
+    padding: 45px 0 41px;
+  }
 }
