@@ -1,0 +1,12 @@
+.body {
+  height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
