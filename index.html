@@ -136,32 +136,34 @@
     <footer class="footer">
       <p class="footer__text">© 2020 Around The U.S.</p>
     </footer>
-    <div class="profile-modal">
-      <div class="profile-modal__content">
+    <div class="popup">
+      <div class="popup__container">
         <form action="#" class="form">
-          <h3 class="profile-modal__title">Edit profile</h3>
+          <h3 class="popup__title">Edit profile</h3>
           <label for="name">
             <input
               type="text"
-              class="form__input"
-              value="Jacques Cousteau"
+              class="form__input form__input_type_name"
+              placeholder="Name"
               name="name"
+              value="Jacques Cousteau"
             />
           </label>
           <label for="job">
             <input
               type="text"
-              class="form__input"
-              value="Explorer"
+              class="form__input form__input_type_job"
+              placeholder="About me"
               name="job"
+              value="Explorer"
             />
           </label>
-          <button type="submit" class="profile-modal__btn">Save</button>
+          <button type="submit" class="popup__btn">Save</button>
         </form>
         <img
           src="./images/close-icon.svg"
           alt="close icon"
-          class="profile-modal__close"
+          class="popup__close"
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-.profile-modal__close {
+.popup__close {
   position: absolute;
   top: -35px;
   right: -35px;
@@ -8,6 +8,6 @@
   cursor: pointer;
 }
 
-.profile-modal__close:hover {
+.popup__close:hover {
   opacity: 0.6;
 }
