@@ -1,0 +1,31 @@
+@import url("./__list/elements__list.css");
+
+.elements {
+  max-width: 282px;
+  margin: 0 auto 48px;
+}
+
+@media screen and (min-width: 375px) {
+  .elements {
+    max-width: 343px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .elements {
+    max-width: 382px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .elements {
+    margin-bottom: 66px;
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .elements {
+    max-width: 882px;
+  }
+}
