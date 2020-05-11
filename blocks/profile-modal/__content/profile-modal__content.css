@@ -1,0 +1,10 @@
+.profile-modal__content {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  padding: 34px 36px 36px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

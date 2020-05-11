@@ -1,0 +1,17 @@
+@import url("./__content/profile-modal__content.css");
+@import url("./__btn/profile-modal__btn.css");
+@import url("./__title/profile-modal__title.css");
+@import url("./__close/profile-modal__close.css");
+
+.profile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
