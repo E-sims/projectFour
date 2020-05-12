@@ -13,7 +13,7 @@
   .elements__list {
     grid-template-columns: 1fr 1fr;
     margin-bottom: 66px;
-    max-width: 720px;
+    max-width: 582px;
     column-gap: 18px;
     row-gap: 21px;
   }

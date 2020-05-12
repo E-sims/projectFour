@@ -9,4 +9,5 @@
   display: flex;
   flex-flow: column nowrap;
   margin: 0;
+  max-height: 361px;
 }
