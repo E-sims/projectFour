@@ -8,9 +8,10 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
+  background-image: url('../../../images/add-btn.svg');
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
