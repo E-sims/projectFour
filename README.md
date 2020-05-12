@@ -1,16 +1,20 @@
 # Project 4: Around The U.S.
 
-### Overview
+![project github photo](https://user-images.githubusercontent.com/50934788/81727435-949e8c80-944e-11ea-87b2-03938034e6c8.png)
 
-* Figma
-* Images
+### This web project was built using the below technologies
 
-**Figma**
+* Figma for design
+* HTML5
+* CSS3
+* Vanilla Javascript
 
-* [Link to the project in Figma](https://www.figma.com/file/xM9rNsdK4iNcFJmDZho3Aw/Sprint-3%3A-From-Portland-to-Portland-%2F-desktop-%2B-mobile?node-id=500%3A0)
+**GitHub Pages**
 
-**Images**
+* [Link to the project design](https://www.figma.com/file/xM9rNsdK4iNcFJmDZho3Aw/Sprint-3%3A-From-Portland-to-Portland-%2F-desktop-%2B-mobile?node-id=500%3A0)
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+**Project Goals**
 
-Have fun with JavaScript!
+The goal of this project is to create a web app that looks great on various devices. The Profile section updates according to the info submitted in the implemented modal popup form.
+
+Thanks for viewing this project!
