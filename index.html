@@ -27,74 +27,13 @@
         <button class="profile__add-btn"></button>
       </section>
       <section class="elements">
-        <ul class="elements__list">
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/yosemite.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Yosemite Valley</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/lake-louise.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Lake Louise</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/bald-mountains.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Bald Mountains</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/latemar.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Latemar</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/vanoise.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Vanois National...</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-          <li class="element">
-            <div
-              class="element__image"
-              style="background-image: url('./images/lago-di-braies.jpg');"
-            ></div>
-            <div class="element__info">
-              <h3 class="element__title">Lago di Braies</h3>
-              <button class="element__like-icon"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="elements__list"></ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__text">© 2020 Around The U.S.</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_type_edit">
       <div class="popup__container">
         <form action="#" class="form">
           <h3 class="popup__title">Edit profile</h3>
@@ -121,6 +60,43 @@
         <button class="popup__close"></button>
       </div>
     </div>
+    <div class="popup popup_type_add-place">
+      <div class="popup__container">
+        <form action="#" class="form">
+          <h3 class="popup__title">New Place</h3>
+          <label for="place-name">
+            <input
+              type="text"
+              class="form__input form__input_type_place-name"
+              placeholder="Place Name"
+              name="place-name"
+              value=""
+            />
+          </label>
+          <label for="link">
+            <input
+              type="link"
+              class="form__input form__input_type_link"
+              placeholder="Link to Picture"
+              name="link"
+              value=""
+            />
+          </label>
+          <button type="submit" class="popup__btn">Save</button>
+        </form>
+        <button class="popup__close"></button>
+      </div>
+    </div>
+    <template class="card-element">
+      <li class="element">
+        <div class="element__image"></div>
+        <div class="element__info">
+          <h3 class="element__title"></h3>
+          <button class="element__like-icon"></button>
+        </div>
+        <button class="element__delete-btn"></button>
+      </li>
+    </template>
     <script src="./index.js"></script>
   </body>
 </html>
