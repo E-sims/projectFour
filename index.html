@@ -14,13 +14,9 @@
     </header>
     <main class="main">
       <section class="profile">
-        <img
-          class="profile__image"
-          src="./images/profile-pic.jpg"
-          alt="Jacques Cousteau"
-        />
+        <div class="profile__image" style="background-image: url('./images/profile-pic.jpg');"></div>
         <div class="profile__info">
-          <p class="profile__name">Jacques Cousteau</p>
+          <h1 class="profile__name">Jacques Cousteau</h1>
           <p class="profile__about">Explorer</p>
           <button class="profile__edit-btn"></button>
         </div>
@@ -35,8 +31,8 @@
     </footer>
     <div class="popup popup_type_edit">
       <div class="popup__container">
+        <h3 class="popup__title">Edit profile</h3>
         <form action="#" class="form">
-          <h3 class="popup__title">Edit profile</h3>
           <label for="name">
             <input
               type="text"
@@ -62,8 +58,8 @@
     </div>
     <div class="popup popup_type_add-place">
       <div class="popup__container">
+        <h3 class="popup__title">New Place</h3>
         <form action="#" class="form">
-          <h3 class="popup__title">New Place</h3>
           <label for="place-name">
             <input
               type="text"
@@ -92,7 +88,7 @@
         <div class="element__image"></div>
         <div class="element__info">
           <h3 class="element__title"></h3>
-          <button class="element__like-icon"></button>
+          <button class="element__like-btn_default"></button>
         </div>
         <button class="element__delete-btn"></button>
       </li>

@@ -1,7 +1,8 @@
 @import url(./__image/element__image.css);
 @import url(./__info/element__info.css);
 @import url(./__title/element__title.css);
-@import url(./__like-icon/element__like-icon.css);
+@import url(./__like-btn/element__like-btn_default.css);
+@import url(./__like-btn/element__like-btn_clicked.css);
 @import url(./__delete-btn/element__delete-btn.css);
 
 .element {
