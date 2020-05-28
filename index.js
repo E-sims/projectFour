@@ -6,6 +6,8 @@ const addPlacePopup = document.querySelector(".popup_type_add-place");
 const addPlaceForm = addPlacePopup.querySelector(".form");
 
 const imagePopup = document.querySelector(".popup_type_image");
+const imageClickedPopup = document.querySelector(".popup__image");
+const imagePopupTitle = document.querySelector(".popup__image-title");
 
 // Buttons and other DOM Elements
 const editButton = document.querySelector(".profile__edit-btn");
@@ -34,7 +36,6 @@ function togglePopup(modal) {
     nameInput.value = userName.textContent;
     jobInput.value = userJob.textContent;
   }
-
   modal.classList.toggle("popup_opened");
 }
 
@@ -117,7 +118,9 @@ function createCard(card) {
     listItem.remove();
   });
 
-  cardElement.addEventListener("click", () => {
+  cardImage.addEventListener("click", () => {
+    imageClickedPopup.style.backgroundImage = "url(" + card.link + ")";
+    imagePopupTitle.textContent = card.name;
     togglePopup(imagePopup);
   });
   return cardElement;
