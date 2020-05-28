@@ -5,6 +5,8 @@ const editForm = editPopup.querySelector(".form");
 const addPlacePopup = document.querySelector(".popup_type_add-place");
 const addPlaceForm = addPlacePopup.querySelector(".form");
 
+const imagePopup = document.querySelector(".popup_type_image");
+
 // Buttons and other DOM Elements
 const editButton = document.querySelector(".profile__edit-btn");
 const editCloseButton = editPopup.querySelector(".popup__close");
@@ -12,6 +14,7 @@ const editCloseButton = editPopup.querySelector(".popup__close");
 const openAddPlacePopup = document.querySelector(".profile__add-btn");
 const closeAddPlacePopup = addPlacePopup.querySelector(".popup__close");
 
+const closeImagePopup = imagePopup.querySelector(".popup__close");
 
 // Inputs
 const userName = document.querySelector(".profile__name");
@@ -21,8 +24,10 @@ const userJob = document.querySelector(".profile__about");
 const nameInput = editForm.querySelector(".form__input_type_name");
 const jobInput = editForm.querySelector(".form__input_type_job");
 
-const placeNameInput = addPlaceForm.querySelector(".form__input_type_place-name");
-const placeTitleInput = addPlaceForm.querySelector(".form__input_type_link");
+const placeNameInput = addPlaceForm.querySelector(
+  ".form__input_type_place-name"
+);
+const placeLinkInput = addPlaceForm.querySelector(".form__input_type_link");
 
 function togglePopup(modal) {
   if (!modal.classList.contains("popup_opened")) {
@@ -32,8 +37,6 @@ function togglePopup(modal) {
 
   modal.classList.toggle("popup_opened");
 }
-
-
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -55,6 +58,10 @@ openAddPlacePopup.addEventListener("click", () => {
 });
 closeAddPlacePopup.addEventListener("click", () => {
   togglePopup(addPlacePopup);
+});
+
+closeImagePopup.addEventListener("click", () => {
+  togglePopup(imagePopup);
 });
 
 const initialCards = [
@@ -93,8 +100,10 @@ function createCard(card) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".element__image");
   const cardTitle = cardElement.querySelector(".element__title");
-  const cardLikeButton = cardElement.querySelector(".element__like-btn_default");
-  const cardDeleteButton = cardElement.querySelector("element__delete-btn");
+  const cardLikeButton = cardElement.querySelector(
+    ".element__like-btn_default"
+  );
+  const cardDeleteButton = cardElement.querySelector(".element__delete-btn");
 
   cardTitle.textContent = card.name;
   cardImage.style.backgroundImage = "url(" + card.link + ")";
@@ -103,9 +112,14 @@ function createCard(card) {
     cardLikeButton.classList.toggle("element__like-btn_clicked");
   });
 
-  // cardDeleteButton.addEventListener("click", () => {
-  //   // deleteCardInstance()
-  // });
+  cardDeleteButton.addEventListener("click", () => {
+    const listItem = cardDeleteButton.closest(".element");
+    listItem.remove();
+  });
+
+  cardElement.addEventListener("click", () => {
+    togglePopup(imagePopup);
+  });
   return cardElement;
 }
 
@@ -117,15 +131,12 @@ initialCards.forEach((card) => {
   placeCard(createCard(card));
 });
 
-const addCard = (evt) => {
+addPlaceForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  let place = {
+  let card = {
     name: placeNameInput.value,
-    link: placeTitleInput.value,
-  }
-}
-
-addPlaceForm.addEventListener("submit", () => {
-  addCard();
+    link: placeLinkInput.value,
+  };
+  placeCard(createCard(card));
   togglePopup(addPlacePopup);
 });
