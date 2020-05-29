@@ -2,10 +2,9 @@
   position: relative;
   height: 100%;
   width: auto;
-  background-size: contain;
   border-radius: 5px;
   margin: 0;
-  max-width: 75vw;
-  max-height: 75vh;
   background-repeat: no-repeat;
+  object-fit: scale-down;
+  max-width: 75vw;
 }

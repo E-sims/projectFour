@@ -119,7 +119,7 @@ function createCard(card) {
   });
 
   cardImage.addEventListener("click", () => {
-    imageClickedPopup.style.backgroundImage = "url(" + card.link + ")";
+    imageClickedPopup.src = card.link;
     imagePopupTitle.textContent = card.name;
     togglePopup(imagePopup);
   });
