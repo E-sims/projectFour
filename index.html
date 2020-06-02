@@ -43,6 +43,7 @@
               placeholder="Name"
               name="name"
               value="Jacques Cousteau"
+              id="name"
             />
           </label>
           <label for="job">
@@ -52,6 +53,7 @@
               placeholder="About me"
               name="job"
               value="Explorer"
+              id="job"
             />
           </label>
           <button type="submit" class="popup__btn">Save</button>
@@ -70,15 +72,17 @@
               placeholder="Title"
               name="place-name"
               value=""
+              id="place-name"
             />
           </label>
           <label for="link">
             <input
-              type="link"
+              type="url"
               class="form__input form__input_type_link"
               placeholder="Image URL"
               name="link"
               value=""
+              id="link"
             />
           </label>
           <button type="submit" class="popup__btn">Save</button>
@@ -89,8 +93,7 @@
     <div class="popup popup_type_image">
       <figure class="popup__image-container">
         <button class="popup__close"></button>
-        <img class="popup__image">
-      </img>
+        <img class="popup__image"/>
         <figcaption class="popup__image-title"></figcaption>
     </figure>
     </div>

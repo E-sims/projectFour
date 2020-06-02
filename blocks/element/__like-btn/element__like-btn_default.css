@@ -12,6 +12,6 @@
   transition: .1s ease;
 }
 
-.element__like-btn:hover {
+.element__like-btn_default:hover {
   opacity: 0.7;
 }
