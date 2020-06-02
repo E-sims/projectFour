@@ -13,9 +13,12 @@
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }

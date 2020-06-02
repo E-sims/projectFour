@@ -1,10 +1,10 @@
 .popup__image {
   position: relative;
-  height: 100%;
   width: auto;
   border-radius: 5px;
   margin: 0;
   background-repeat: no-repeat;
-  object-fit: scale-down;
+  object-fit: contain;
   max-width: 75vw;
+  max-height: 75vh;
 }
