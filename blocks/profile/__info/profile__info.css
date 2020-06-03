@@ -2,11 +2,15 @@
   min-width: 279px;
   margin: 0 auto 36px;
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
   .profile__info {
     min-width: 428px;
     margin: 0;
+    display: block;
   }
 }
