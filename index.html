@@ -44,6 +44,9 @@
               name="name"
               value="Jacques Cousteau"
               id="name"
+              required
+              minlength="2"
+              maxlength="40"
             />
           </label>
           <label for="job">
@@ -54,6 +57,9 @@
               name="job"
               value="Explorer"
               id="job"
+              required
+              minlength="2"
+              maxlength="40"
             />
           </label>
           <button type="submit" class="popup__btn">Save</button>
@@ -73,6 +79,9 @@
               name="place-name"
               value=""
               id="place-name"
+              required
+              minlength="1"
+              maxlength="30"
             />
           </label>
           <label for="link">
@@ -83,6 +92,7 @@
               name="link"
               value=""
               id="link"
+              required
             />
           </label>
           <button type="submit" class="popup__btn">Save</button>
@@ -93,9 +103,9 @@
     <div class="popup popup_type_image">
       <figure class="popup__image-container">
         <button class="popup__close"></button>
-        <img class="popup__image"/>
+        <img class="popup__image" />
         <figcaption class="popup__image-title"></figcaption>
-    </figure>
+      </figure>
     </div>
     <template class="card-element">
       <li class="element">

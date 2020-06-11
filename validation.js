@@ -1,9 +1,15 @@
-function checkInputValidity(form, input) {}
+function checkInputValidity(form, input, rest) {
+  if (input.validity.valid) {
+    //hideError
+  } else {
+    //showError
+  }
+}
 
-function enableValidation({formSelector, inputSelector, ...rest}) {
+function enableValidation({ formSelector, inputSelector, ...rest }) {
   const forms = [...document.querySelectorAll(formSelector)];
   forms.forEach((form) => {
-    form.addEventListener('submit', (evt) => {
+    form.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
 
@@ -16,10 +22,10 @@ function enableValidation({formSelector, inputSelector, ...rest}) {
 }
 
 enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".popup__btn",
+  inactiveButtonClass: "popup__btn_disabled",
   inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible"
+  errorClass: "popup__error_visible",
 });
