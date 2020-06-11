@@ -1,3 +1,7 @@
+function showInputError(form, input, rest) {
+  
+}
+
 function checkInputValidity(form, input, rest) {
   if (input.validity.valid) {
     //hideError
@@ -13,10 +17,12 @@ function enableValidation({ formSelector, inputSelector, ...rest }) {
       evt.preventDefault();
     });
 
-    const inputs = [...form.querySelectorAll(settings.inputSelector)];
+    const inputs = [...form.querySelectorAll(inputSelector)];
     inputs.forEach((input) => {
-      //checkInputValidity();
-      //toggleButton();
+      input.addEventListener("input", () => {
+        checkInputValidity(form, input, rest);
+        //toggleButton();
+      });      
     });
   });
 }
