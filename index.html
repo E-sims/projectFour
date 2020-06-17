@@ -36,33 +36,33 @@
       <div class="popup__container">
         <h3 class="popup__title">Edit profile</h3>
         <form action="#" class="form">
-          <label for="name">
+          <label for="profile-name">
             <input
               type="text"
               class="form__input form__input_type_name"
               placeholder="Name"
               name="name"
               value="Jacques Cousteau"
-              id="name"
+              id="profile-name"
               required
               minlength="2"
               maxlength="40"
             />
-            <span class="form__input-error"></span>
+            <span class="form__input-error" id="profile-name-error"></span>
           </label>
-          <label for="job">
+          <label for="profile-description">
             <input
               type="text"
               class="form__input form__input_type_job"
               placeholder="About me"
               name="job"
               value="Explorer"
-              id="job"
+              id="profile-description"
               required
               minlength="2"
               maxlength="40"
             />
-            <span class="form__input-error"></span>
+            <span class="form__input-error" id="profile-description-error"></span>
           </label>
           <button type="submit" class="popup__btn">Save</button>
         </form>
@@ -85,19 +85,19 @@
               minlength="1"
               maxlength="30"
             />
-            <span class="form__input-error"></span>
+            <span class="form__input-error" id="place-name-error"></span>
           </label>
-          <label for="link">
+          <label for="place-url">
             <input
               type="url"
               class="form__input form__input_type_link"
               placeholder="Image URL"
               name="link"
               value=""
-              id="link"
+              id="place-url"
               required
             />
-            <span class="form__input-error"></span>
+            <span class="form__input-error" id="place-url-error"></span>
           </label>
           <button type="submit" class="popup__btn">Save</button>
         </form>
