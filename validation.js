@@ -26,9 +26,9 @@ function toggleButton(inputs, button, form, {inactiveButtonClass, ...rest}) {
   });
 
   if (isValid) {
-    button.classList.remove(inactiveButtonClass);
+    button.classList.remove(form.inactiveButtonClass);
   } else {
-    button.classList.add(inactiveButtonClass);
+    button.classList.add(form.inactiveButtonClass);
   }
 }
 
@@ -56,6 +56,6 @@ enableValidation({
   inputSelector: ".form__input",
   submitButtonSelector: ".popup__btn",
   inactiveButtonClass: "popup__btn_disabled",
-  inputErrorClass: "popup__input_type_error",
+  inputErrorClass: "form__input_type_error",
   errorClass: "popup__error_visible",
 });
