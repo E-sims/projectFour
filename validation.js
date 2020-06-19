@@ -20,15 +20,17 @@ function checkInputValidity(form, input, rest) {
   }
 }
 
-function toggleButton(inputs, button, form, {inactiveButtonClass, ...rest}) {
-  const isValid = inputs.some((input) => {
+const hasInvalidInput = (inputs) => {
+  return inputs.some((input) => {
     return !input.validity.valid;
   });
+}
 
-  if (isValid) {
-    button.classList.remove(form.inactiveButtonClass);
+function toggleButton(inputs, button) {
+  if (hasInvalidInput(inputs)) {
+    button.classList.add("popup__btn_disabled");
   } else {
-    button.classList.add(form.inactiveButtonClass);
+    button.classList.remove("popup__btn_disabled");
   }
 }
 
@@ -41,11 +43,12 @@ function enableValidation({ formSelector, inputSelector, submitButtonSelector, .
 
     const inputs = [...form.querySelectorAll(inputSelector)];
     const button = form.querySelector(submitButtonSelector);
+    toggleButton(inputs, button);
 
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
         checkInputValidity(form, input, rest);
-        toggleButton(inputs, button, form, rest);
+        toggleButton(inputs, button);
       });      
     });
   });

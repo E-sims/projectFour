@@ -9,6 +9,8 @@ const imagePopup = document.querySelector(".popup_type_image");
 const imageClickedPopup = document.querySelector(".popup__image");
 const imagePopupTitle = document.querySelector(".popup__image-title");
 
+const popupContainer = document.querySelector(".popup__container");
+
 // Buttons and other DOM Elements
 const editButton = document.querySelector(".profile__edit-btn");
 const editCloseButton = editPopup.querySelector(".popup__close");
@@ -31,6 +33,7 @@ const placeNameInput = addPlaceForm.querySelector(
 );
 const placeLinkInput = addPlaceForm.querySelector(".form__input_type_link");
 
+
 function togglePopup(modal) {
   if (!modal.classList.contains("popup_opened")) {
     nameInput.value = userName.textContent;
@@ -38,6 +41,14 @@ function togglePopup(modal) {
   }
   modal.classList.toggle("popup_opened");
 }
+
+// document.addEventListener("click", function(event) {
+//   const isClickInside = popupContainer.contains(event.target);
+//   if (!isClickInside) {
+//     togglePopup(imagePopup);
+//   }
+// });
+
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
