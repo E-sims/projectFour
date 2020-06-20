@@ -33,7 +33,6 @@ const placeNameInput = addPlaceForm.querySelector(
 );
 const placeLinkInput = addPlaceForm.querySelector(".form__input_type_link");
 
-
 function togglePopup(modal) {
   if (!modal.classList.contains("popup_opened")) {
     nameInput.value = userName.textContent;
@@ -42,13 +41,21 @@ function togglePopup(modal) {
   modal.classList.toggle("popup_opened");
 }
 
-// document.addEventListener("click", function(event) {
-//   const isClickInside = popupContainer.contains(event.target);
-//   if (!isClickInside) {
-//     togglePopup(imagePopup);
-//   }
-// });
+function closeModalClick(evt) {
+  const modalClick = evt.target;
+  if (!modalClick.classList.contains("popup_opened")) {
+    return;
+  }
+  togglePopup(modalClick);
+}
 
+function closeModalEsc(evt) {
+  const modalEsc = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    togglePopup(modalEsc);
+  }
+  evt.target.removeEventListener("keydown", closeModalEsc);
+}
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -154,3 +161,6 @@ addPlaceForm.addEventListener("submit", (evt) => {
   placeCard(createCard(card));
   togglePopup(addPlacePopup);
 });
+
+document.addEventListener("click", closeModalClick);
+document.addEventListener("keydown", closeModalEsc);
