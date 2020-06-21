@@ -9,8 +9,6 @@ const imagePopup = document.querySelector(".popup_type_image");
 const imageClickedPopup = document.querySelector(".popup__image");
 const imagePopupTitle = document.querySelector(".popup__image-title");
 
-const popupContainer = document.querySelector(".popup__container");
-
 // Buttons and other DOM Elements
 const editButton = document.querySelector(".profile__edit-btn");
 const editCloseButton = editPopup.querySelector(".popup__close");
@@ -125,7 +123,7 @@ function createCard(card) {
   const cardDeleteButton = cardElement.querySelector(".element__delete-btn");
 
   cardTitle.textContent = card.name;
-  cardImage.style.backgroundImage = "url(" + card.link + ")";
+  cardImage.style.backgroundImage = `url("${card.link}")`;
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("element__like-btn_clicked");
@@ -154,7 +152,7 @@ initialCards.forEach((card) => {
 
 addPlaceForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  let card = {
+  const card = {
     name: placeNameInput.value,
     link: placeLinkInput.value,
   };

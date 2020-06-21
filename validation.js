@@ -1,11 +1,11 @@
-function showInputError(form, input, {errorClass, inputErrorClass, ...rest}) {
+function showInputError(form, input, { errorClass, inputErrorClass }) {
   const errorElement = form.querySelector(`#${input.id}-error`);
   input.classList.add(inputErrorClass);
   errorElement.classList.add(errorClass);
   errorElement.textContent = input.validationMessage;
 }
 
-function hideInputError(form, input, {errorClass, inputErrorClass, ...rest}) {
+function hideInputError(form, input, { errorClass, inputErrorClass }) {
   const errorElement = form.querySelector(`#${input.id}-error`);
   input.classList.remove(inputErrorClass);
   errorElement.classList.remove(errorClass);
@@ -24,17 +24,24 @@ const hasInvalidInput = (inputs) => {
   return inputs.some((input) => {
     return !input.validity.valid;
   });
-}
+};
 
 function toggleButton(inputs, button) {
   if (hasInvalidInput(inputs)) {
     button.classList.add("popup__btn_disabled");
+    button.disabled = true;
   } else {
     button.classList.remove("popup__btn_disabled");
+    button.disabled = false;
   }
 }
 
-function enableValidation({ formSelector, inputSelector, submitButtonSelector, ...rest }) {
+function enableValidation({
+  formSelector,
+  inputSelector,
+  submitButtonSelector,
+  ...rest
+}) {
   const forms = [...document.querySelectorAll(formSelector)];
   forms.forEach((form) => {
     form.addEventListener("submit", (evt) => {
@@ -49,7 +56,7 @@ function enableValidation({ formSelector, inputSelector, submitButtonSelector, .
       input.addEventListener("input", () => {
         checkInputValidity(form, input, rest);
         toggleButton(inputs, button);
-      });      
+      });
     });
   });
 }
