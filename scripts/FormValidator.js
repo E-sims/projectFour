@@ -8,4 +8,29 @@ export class FormValidator {
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
   }
+
+  _showInputError() {
+
+  }
+
+  _hideInputError() {
+
+  }
+
+  _checkInputValidity() {
+
+  }
+
+  _hasInvalidInput() {
+
+  }
+
+  _toggleButton() {
+
+  }
+
+  enableValidation() {
+
+  }
+
 }

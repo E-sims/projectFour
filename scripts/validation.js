@@ -1,40 +1,41 @@
-function showInputError(form, input, { errorClass, inputErrorClass }) {
-  const errorElement = form.querySelector(`#${input.id}-error`);
-  input.classList.add(inputErrorClass);
-  errorElement.classList.add(errorClass);
-  errorElement.textContent = input.validationMessage;
-}
+const showInputError = (formElement, inputElement, errorMessage, config) => {
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+  inputElement.classList.add(config.inputErrorClass);
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add(config.errorClass);
+};
 
-function hideInputError(form, input, { errorClass, inputErrorClass }) {
-  const errorElement = form.querySelector(`#${input.id}-error`);
-  input.classList.remove(inputErrorClass);
-  errorElement.classList.remove(errorClass);
-  errorElement.textContent = "";
-}
+const hideInputError = (formElement, inputElement, config) => {
+  const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
+  inputElement.classList.remove(config.inputErrorClass);
+  errorElement.classList.remove(config.errorClass);
+  errorElement.textContent = '';
+};
 
-function checkInputValidity(form, input, rest) {
-  if (input.validity.valid) {
-    hideInputError(form, input, rest);
+const checkInputValidity = (formElement, inputElement, config) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else {
-    showInputError(form, input, rest);
+    hideInputError(formElement, inputElement, config);
   }
-}
+};
 
-const hasInvalidInput = (inputs) => {
-  return inputs.some((input) => {
-    return !input.validity.valid;
+const hasInvalidInput = (inputList) => {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
   });
 };
 
-function toggleButton(inputs, button) {
-  if (hasInvalidInput(inputs)) {
-    button.classList.add("popup__btn_disabled");
-    button.disabled = true;
+const toggleButton = (inputList, buttonElement, inactiveButtonClass) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(inactiveButtonClass);
+    buttonElement.disabled = true;
   } else {
-    button.classList.remove("popup__btn_disabled");
-    button.disabled = false;
+    buttonElement.classList.remove(inactiveButtonClass);
+    buttonElement.disabled = false;
   }
-}
+};
+///////////////////// Start Here: video 5:32
 
 function enableValidation({
   formSelector,
