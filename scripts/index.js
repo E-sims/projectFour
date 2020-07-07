@@ -1,8 +1,26 @@
-// Wrappers
-const editPopup = document.querySelector(".popup_type_edit");
-const editForm = editPopup.querySelector(".form");
+import FormValidtor from "./FormValidator.js";
+import Card from "./Card.js";
 
+const defaultConfig = {
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".popup__btn",
+  inactiveButtonClass: "popup__btn_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+const editPopup = document.querySelector(".popup_type_edit");
 const addPlacePopup = document.querySelector(".popup_type_add-place");
+
+const editFormValidator = new FormValidtor(defaultConfig, editPopup);
+const cardFormValidator = new FormValidtor(defaultConfig, addPlacePopup);
+
+editFormValidator.enableValidation();
+cardFormValidator.enableValidation();
+
+// Wrappers
+const editForm = editPopup.querySelector(".form");
 const addPlaceForm = addPlacePopup.querySelector(".form");
 
 const imagePopup = document.querySelector(".popup_type_image");
