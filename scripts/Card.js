@@ -1,3 +1,29 @@
+const imageClickedPopup = document.querySelector(".popup__image");
+const imagePopupTitle = document.querySelector(".popup__image-title");
+const imagePopup = document.querySelector(".popup_type_image");
+
+const openModal = (modalWindow) => {
+  modalWindow.classList.add("popup_opened");
+  document.addEventListener("keyup", handleEsc);
+}
+
+const closeModal = (modalWindow) => {
+  modalWindow.classList.remove("popup_opened");
+  document.removeEventListener("keyup", handleEsc);
+}
+
+const ESC_KEY = 27;
+
+const handleEsc = (evt) => {
+  evt.preventDefault();
+
+  const activePopup = document.querySelector(".popup_opened");
+
+  if (evt.which === ESC_KEY) {
+    closeModal(activePopup);
+  }
+}
+
 class Card {
   constructor(data, cardTemplateSelector) {
     this._name = data.name;
@@ -38,7 +64,7 @@ class Card {
   _handlePreviewPicture() {
     imageClickedPopup.src = this._link;
     imagePopupTitle.textContent = this._name;
-    togglePopup(imagePopup);
+    openModal(imagePopup);
   }
 
   getCard() {
