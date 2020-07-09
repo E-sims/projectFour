@@ -23,8 +23,6 @@ cardFormValidator.enableValidation();
 const editForm = editPopup.querySelector(".form");
 const addPlaceForm = addPlacePopup.querySelector(".form");
 
-
-
 // Buttons and other DOM Elements
 const editButton = document.querySelector(".profile__edit-btn");
 const editCloseButton = editPopup.querySelector(".popup__close");
@@ -128,7 +126,7 @@ const cardTemplateSelector = ".card-element";
 // const cardTemplate = document
 //   .querySelector(".card-element")
 //   .content.querySelector(".element");
-const listWrapper = document.querySelector(".elements__list");
+const list = document.querySelector(".elements__list");
 
 // function createCard(card) {
 //   const cardElement = cardTemplate.cloneNode(true);
@@ -159,17 +157,17 @@ const listWrapper = document.querySelector(".elements__list");
 //   return cardElement;
 // }
 
-const renderCard = (data, listWrapper) => {
+const renderCard = (data, list) => {
   const card = new Card(data, cardTemplateSelector);
-  listWrapper.prepend(card.getCard());
+  list.prepend(card.getCard());
 };
 
 // function placeCard(card) {
 //   listWrapper.prepend(card);
 // }
 
-initialCards.forEach((card) => {
-  renderCard(card, ".elements__list");
+initialCards.forEach((data) => {
+  renderCard(data, list);
   // placeCard(createCard(card));
 });
 
@@ -183,5 +181,5 @@ addPlaceForm.addEventListener("submit", (evt) => {
   togglePopup(addPlacePopup);
 });
 
-document.addEventListener("click", closeModalClick);
-document.addEventListener("keydown", closeModalEsc);
+// document.addEventListener("click", closeModalClick);
+// document.addEventListener("keydown", closeModalEsc);
