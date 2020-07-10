@@ -3,7 +3,7 @@ import { closeModalClick } from "./index.js";
 const imagePopupTitle = document.querySelector(".popup__image-title");
 const imageClickedPopup = document.querySelector(".popup__image");
 const imagePopup = document.querySelector(".popup_type_image");
-const imagePopupClose = document.querySelector(".popup__close");
+const imagePopupClose = imagePopup.querySelector(".popup__close");
 
 const openModal = (modalWindow) => {
   modalWindow.classList.add("popup_opened");

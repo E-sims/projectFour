@@ -10,6 +10,33 @@ const defaultConfig = {
   errorClass: "popup__error_visible",
 };
 
+const initialCards = [
+  {
+    name: "Yosemite Valley",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+  },
+  {
+    name: "Lake Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+  },
+  {
+    name: "Vanois National Park",
+    link: "https://code.s3.yandex.net/web-code/vanois.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg",
+  },
+];
+
 const editPopup = document.querySelector(".popup_type_edit");
 const addPlacePopup = document.querySelector(".popup_type_add-place");
 
@@ -51,21 +78,13 @@ function modalPopup(modal) {
   modal.classList.toggle("popup_opened");
 }
 
-export function closeModalClick(evt) {
+function closeModalClick(evt) {
   const modalClick = evt.target;
   if (!modalClick.classList.contains("popup_opened")) {
     return;
   }
   modalPopup(modalClick);
 }
-
-// function closeModalEsc(evt) {
-//   const modalEsc = document.querySelector(".popup_opened");
-//   if (evt.key === "Escape") {
-//     modalPopup(modalEsc);
-//   }
-//   evt.target.removeEventListener("keydown", closeModalEsc);
-// }
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -88,33 +107,6 @@ openAddPlacePopup.addEventListener("click", () => {
 closeAddPlacePopup.addEventListener("click", () => {
   modalPopup(addPlacePopup);
 });
-
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    name: "Vanois National Park",
-    link: "https://code.s3.yandex.net/web-code/vanois.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-];
 
 const cardTemplateSelector = ".card-element";
 const list = document.querySelector(".elements__list");
@@ -139,5 +131,4 @@ addPlaceForm.addEventListener("submit", (evt) => {
   modalPopup(addPlacePopup);
 });
 
-// document.addEventListener("click", closeModalClick);
-// document.addEventListener("keydown", closeModalEsc);
+export { closeModalClick };
