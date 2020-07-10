@@ -59,13 +59,13 @@ export function closeModalClick(evt) {
   modalPopup(modalClick);
 }
 
-function closeModalEsc(evt) {
-  const modalEsc = document.querySelector(".popup_opened");
-  if (evt.key === "Escape") {
-    modalPopup(modalEsc);
-  }
-  evt.target.removeEventListener("keydown", closeModalEsc);
-}
+// function closeModalEsc(evt) {
+//   const modalEsc = document.querySelector(".popup_opened");
+//   if (evt.key === "Escape") {
+//     modalPopup(modalEsc);
+//   }
+//   evt.target.removeEventListener("keydown", closeModalEsc);
+// }
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -88,7 +88,6 @@ openAddPlacePopup.addEventListener("click", () => {
 closeAddPlacePopup.addEventListener("click", () => {
   modalPopup(addPlacePopup);
 });
-
 
 const initialCards = [
   {
