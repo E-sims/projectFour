@@ -1,6 +1,6 @@
 import FormValidtor from "./FormValidator.js";
 import Card from "./Card.js";
-import { modalPopup, closeModalClick } from "./utils.js";
+import { modalPopup } from "./utils.js";
 
 const defaultConfig = {
   formSelector: ".form",
