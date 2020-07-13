@@ -1,5 +1,6 @@
 import FormValidtor from "./FormValidator.js";
 import Card from "./Card.js";
+import { modalPopup, closeModalClick } from "./utils.js";
 
 const defaultConfig = {
   formSelector: ".form",
@@ -70,22 +71,6 @@ const placeNameInput = addPlaceForm.querySelector(
 );
 const placeLinkInput = addPlaceForm.querySelector(".form__input_type_link");
 
-function modalPopup(modal) {
-  if (!modal.classList.contains("popup_opened")) {
-    nameInput.value = userName.textContent;
-    jobInput.value = userJob.textContent;
-  }
-  modal.classList.toggle("popup_opened");
-}
-
-function closeModalClick(evt) {
-  const modalClick = evt.target;
-  if (!modalClick.classList.contains("popup_opened")) {
-    return;
-  }
-  modalPopup(modalClick);
-}
-
 function formSubmitHandler(evt) {
   evt.preventDefault();
   userName.textContent = nameInput.value;
@@ -109,7 +94,7 @@ closeAddPlacePopup.addEventListener("click", () => {
 });
 
 const cardTemplateSelector = ".card-element";
-const list = document.querySelector(".elements__list");
+const listWrapper = document.querySelector(".elements__list");
 
 const renderCard = (data, list) => {
   const card = new Card(data, cardTemplateSelector);
@@ -117,7 +102,7 @@ const renderCard = (data, list) => {
 };
 
 initialCards.forEach((data) => {
-  renderCard(data, list);
+  renderCard(data, listWrapper);
 });
 
 addPlaceForm.addEventListener("submit", (evt) => {
@@ -127,8 +112,6 @@ addPlaceForm.addEventListener("submit", (evt) => {
     link: placeLinkInput.value,
   };
 
-  renderCard(card, list);
+  renderCard(card, listWrapper);
   modalPopup(addPlacePopup);
 });
-
-export { closeModalClick };

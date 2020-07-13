@@ -1,32 +1,9 @@
-import { closeModalClick } from "./index.js";
+import { openModal, closeModal } from "./utils.js";
 
 const imagePopupTitle = document.querySelector(".popup__image-title");
 const imageClickedPopup = document.querySelector(".popup__image");
 const imagePopup = document.querySelector(".popup_type_image");
 const imagePopupClose = imagePopup.querySelector(".popup__close");
-
-const openModal = (modalWindow) => {
-  modalWindow.classList.add("popup_opened");
-  document.addEventListener("keyup", handleEsc);
-  document.addEventListener("click", closeModalClick);
-};
-
-const closeModal = (modalWindow) => {
-  modalWindow.classList.remove("popup_opened");
-  document.removeEventListener("keyup", handleEsc);
-};
-
-const ESC_KEY = 27;
-
-const handleEsc = (evt) => {
-  evt.preventDefault();
-
-  const activePopup = document.querySelector(".popup_opened");
-
-  if (evt.which === ESC_KEY) {
-    closeModal(activePopup);
-  }
-};
 
 class Card {
   constructor(data, cardTemplateSelector) {
