@@ -1,3 +1,5 @@
+import { userName, userJob, nameInput, jobInput } from "./constants.js";
+
 function modalPopup(modal) {
   modal.classList.toggle("popup_opened");
 }
@@ -9,6 +11,14 @@ function closeModalClick(evt) {
   }
   modalPopup(modalClick);
 }
+
+function formSubmitHandler(evt) {
+  evt.preventDefault();
+  userName.textContent = nameInput.value;
+  userJob.textContent = jobInput.value;
+  modalPopup(editPopup);
+}
+
 const openModal = (modalWindow) => {
   modalWindow.classList.add("popup_opened");
   document.addEventListener("keyup", handleEsc);
@@ -32,4 +42,11 @@ const handleEsc = (evt) => {
   }
 };
 
-export { modalPopup, closeModalClick, openModal, closeModal, handleEsc };
+export {
+  modalPopup,
+  closeModalClick,
+  openModal,
+  closeModal,
+  handleEsc,
+  formSubmitHandler,
+};

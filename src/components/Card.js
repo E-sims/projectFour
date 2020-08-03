@@ -1,4 +1,4 @@
-import { openModal, closeModal } from "./utils.js";
+import { openModal, closeModal } from "../utils/utils.js";
 
 const imagePopupTitle = document.querySelector(".popup__image-title");
 const imageClickedPopup = document.querySelector(".popup__image");
@@ -6,11 +6,11 @@ const imagePopup = document.querySelector(".popup_type_image");
 const imagePopupClose = imagePopup.querySelector(".popup__close");
 
 class Card {
-  constructor(data, cardTemplateSelector) {
+  constructor(data, cardTemplateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
-
     this._cardTemplateSelector = cardTemplateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getCardTemplate() {
@@ -31,9 +31,7 @@ class Card {
       .addEventListener("click", this._handleDeleteCard);
     this._card
       .querySelector(".element__image")
-      .addEventListener("click", (evt) => {
-        this._handlePreviewPicture(evt);
-      });
+      .addEventListener("click", this._handleCardClick);
   }
 
   _handleLikeIcon(evt) {
