@@ -64,3 +64,4 @@ export const placeLinkInput = addPlaceForm.querySelector(
 );
 export const cardTemplateSelector = ".card-element";
 export const listWrapper = ".elements__list";
+export const popupImage = ".popup_type_image";

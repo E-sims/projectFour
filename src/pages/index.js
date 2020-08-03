@@ -19,11 +19,12 @@ import {
   placeLinkInput,
   cardTemplateSelector,
   listWrapper,
+  popupImage,
 } from "../utils/constants.js";
 
 const editFormValidator = new FormValidtor(defaultConfig, editPopup);
 const cardFormValidator = new FormValidtor(defaultConfig, addPlacePopup);
-const photoPopup = new PopupWithImage("popup_type_image");
+const photoPopup = new PopupWithImage(popupImage);
 
 editFormValidator.enableValidation();
 cardFormValidator.enableValidation();
